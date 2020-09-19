@@ -1,0 +1,36 @@
+digraph "coincidence_detector" {
+label="coincidence_detector";
+rankdir="LR";
+remincross=true;
+n6 [ shape=octagon, label="SPAD_valid", color="black", fontcolor="black" ];
+n7 [ shape=octagon, label="a", color="black", fontcolor="black" ];
+n8 [ shape=octagon, label="b", color="black", fontcolor="black" ];
+n9 [ shape=octagon, label="c", color="black", fontcolor="black" ];
+n10 [ shape=octagon, label="d", color="black", fontcolor="black" ];
+c14 [ shape=record, label="{{<p11> A|<p12> B|<p13> Y}|$138\nOR2X1|{}}" ];
+c16 [ shape=record, label="{{<p11> A|<p12> B|<p15> C|<p13> Y}|$139\nAOI21X1|{}}" ];
+c17 [ shape=record, label="{{<p11> A|<p12> B|<p13> Y}|$140\nNAND2X1|{}}" ];
+c18 [ shape=record, label="{{<p11> A|<p12> B|<p13> Y}|$141\nNOR2X1|{}}" ];
+c19 [ shape=record, label="{{<p11> A|<p12> B|<p15> C|<p13> Y}|$142\nOAI21X1|{}}" ];
+n10:e -> c16:p11:w [color="black", label=""];
+n10:e -> c18:p11:w [color="black", label=""];
+n2 [ shape=diamond, label="$new_n6_" ];
+n2:e -> c14:p13:w [color="black", label=""];
+n2:e -> c16:p15:w [color="black", label=""];
+n3 [ shape=diamond, label="$new_n7_" ];
+n3:e -> c16:p13:w [color="black", label=""];
+n3:e -> c19:p11:w [color="black", label=""];
+n4 [ shape=diamond, label="$new_n8_" ];
+n4:e -> c17:p13:w [color="black", label=""];
+n4:e -> c19:p15:w [color="black", label=""];
+n5 [ shape=diamond, label="$new_n9_" ];
+n5:e -> c18:p13:w [color="black", label=""];
+n5:e -> c19:p12:w [color="black", label=""];
+n6:e -> c19:p13:w [color="black", label=""];
+n7:e -> c14:p12:w [color="black", label=""];
+n7:e -> c17:p12:w [color="black", label=""];
+n8:e -> c14:p11:w [color="black", label=""];
+n8:e -> c17:p11:w [color="black", label=""];
+n9:e -> c16:p12:w [color="black", label=""];
+n9:e -> c18:p12:w [color="black", label=""];
+}

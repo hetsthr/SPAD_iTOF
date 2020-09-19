@@ -1,0 +1,113 @@
+#! /usr/local/bin/vvp
+:ivl_version "11.0 (devel)" "(s20150603-819-g462ee62)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "/usr/local/lib/ivl/system.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/local/lib/ivl/v2005_math.vpi";
+:vpi_module "/usr/local/lib/ivl/va_math.vpi";
+S_0x258d800 .scope module, "coincidence_test" "coincidence_test" 2 2;
+ .timescale -9 -12;
+v0x25a8d20_0 .var "a", 0 0;
+v0x25a8de0_0 .var "b", 0 0;
+v0x25a8eb0_0 .var "c", 0 0;
+v0x25a8fb0_0 .var "d", 0 0;
+v0x25a9080_0 .net "out", 0 0, L_0x25aa300;  1 drivers
+S_0x258d990 .scope module, "d1" "coincidence_detector" 2 21, 3 2 0, S_0x258d800;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /INPUT 1 "c";
+    .port_info 3 /INPUT 1 "d";
+    .port_info 4 /OUTPUT 1 "SPAD_valid";
+L_0x25a9120 .functor NAND 1, v0x25a8d20_0, v0x25a8de0_0, C4<1>, C4<1>;
+L_0x25a9260 .functor NAND 1, v0x25a8eb0_0, v0x25a8fb0_0, C4<1>, C4<1>;
+L_0x25a9370 .functor NAND 1, v0x25a8d20_0, v0x25a8eb0_0, C4<1>, C4<1>;
+L_0x25a93e0 .functor NAND 1, v0x25a8d20_0, v0x25a8fb0_0, C4<1>, C4<1>;
+L_0x25a94e0 .functor NAND 1, v0x25a8eb0_0, v0x25a8de0_0, C4<1>, C4<1>;
+L_0x25a9610 .functor NAND 1, v0x25a8fb0_0, v0x25a8de0_0, C4<1>, C4<1>;
+L_0x25a9810 .functor NAND 1, L_0x25a98e0, L_0x25a9980, C4<1>, C4<1>;
+L_0x25a9a20 .functor NAND 1, L_0x25a9ac0, L_0x25a9bb0, C4<1>, C4<1>;
+L_0x25aa060 .functor NAND 1, L_0x25aa120, L_0x25aa210, C4<1>, C4<1>;
+L_0x25aa300 .functor OR 1, L_0x25aa420, L_0x25aa5d0, L_0x25aa6c0, C4<0>;
+v0x258e140_0 .net "SPAD_valid", 0 0, L_0x25aa300;  alias, 1 drivers
+v0x25a7760_0 .net *"_ivl_1", 0 0, L_0x25a9120;  1 drivers
+v0x25a7840_0 .net *"_ivl_10", 0 0, L_0x25a93e0;  1 drivers
+v0x25a7930_0 .net *"_ivl_13", 0 0, L_0x25a94e0;  1 drivers
+v0x25a7a10_0 .net *"_ivl_16", 0 0, L_0x25a9610;  1 drivers
+v0x25a7b40_0 .net *"_ivl_19", 0 0, L_0x25a9810;  1 drivers
+v0x25a7c20_0 .net *"_ivl_22", 0 0, L_0x25a98e0;  1 drivers
+v0x25a7d00_0 .net *"_ivl_24", 0 0, L_0x25a9980;  1 drivers
+v0x25a7de0_0 .net *"_ivl_26", 0 0, L_0x25a9a20;  1 drivers
+v0x25a7f50_0 .net *"_ivl_29", 0 0, L_0x25a9ac0;  1 drivers
+v0x25a8030_0 .net *"_ivl_31", 0 0, L_0x25a9bb0;  1 drivers
+v0x25a8110_0 .net *"_ivl_33", 0 0, L_0x25aa060;  1 drivers
+v0x25a81f0_0 .net *"_ivl_37", 0 0, L_0x25aa120;  1 drivers
+v0x25a82d0_0 .net *"_ivl_39", 0 0, L_0x25aa210;  1 drivers
+v0x25a83b0_0 .net *"_ivl_4", 0 0, L_0x25a9260;  1 drivers
+v0x25a8490_0 .net *"_ivl_42", 0 0, L_0x25aa420;  1 drivers
+v0x25a8570_0 .net *"_ivl_44", 0 0, L_0x25aa5d0;  1 drivers
+v0x25a8720_0 .net *"_ivl_46", 0 0, L_0x25aa6c0;  1 drivers
+v0x25a87c0_0 .net *"_ivl_7", 0 0, L_0x25a9370;  1 drivers
+v0x25a88a0_0 .net "a", 0 0, v0x25a8d20_0;  1 drivers
+v0x25a8960_0 .net "b", 0 0, v0x25a8de0_0;  1 drivers
+v0x25a8a20_0 .net "c", 0 0, v0x25a8eb0_0;  1 drivers
+v0x25a8ae0_0 .net "d", 0 0, v0x25a8fb0_0;  1 drivers
+v0x25a8ba0_0 .net "w", 8 0, L_0x25a9d30;  1 drivers
+L_0x25a98e0 .part L_0x25a9d30, 0, 1;
+L_0x25a9980 .part L_0x25a9d30, 1, 1;
+L_0x25a9ac0 .part L_0x25a9d30, 2, 1;
+L_0x25a9bb0 .part L_0x25a9d30, 3, 1;
+LS_0x25a9d30_0_0 .concat8 [ 1 1 1 1], L_0x25a9120, L_0x25a9260, L_0x25a9370, L_0x25a93e0;
+LS_0x25a9d30_0_4 .concat8 [ 1 1 1 1], L_0x25a94e0, L_0x25a9610, L_0x25a9810, L_0x25a9a20;
+LS_0x25a9d30_0_8 .concat8 [ 1 0 0 0], L_0x25aa060;
+L_0x25a9d30 .concat8 [ 4 4 1 0], LS_0x25a9d30_0_0, LS_0x25a9d30_0_4, LS_0x25a9d30_0_8;
+L_0x25aa120 .part L_0x25a9d30, 4, 1;
+L_0x25aa210 .part L_0x25a9d30, 5, 1;
+L_0x25aa420 .part L_0x25a9d30, 6, 1;
+L_0x25aa5d0 .part L_0x25a9d30, 7, 1;
+L_0x25aa6c0 .part L_0x25a9d30, 8, 1;
+    .scope S_0x258d800;
+T_0 ;
+    %vpi_call 2 5 "$dumpfile", "coincidence_test.vcd" {0 0 0};
+    %vpi_call 2 6 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x258d800 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x25a8d20_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x25a8de0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x25a8eb0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x25a8fb0_0, 0, 1;
+    %delay 5000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x25a8d20_0, 0, 1;
+    %delay 5000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x25a8de0_0, 0, 1;
+    %delay 5000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x25a8eb0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x25a8d20_0, 0, 1;
+    %delay 6000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x25a8fb0_0, 0, 1;
+    %delay 1000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x25a8eb0_0, 0, 1;
+    %delay 2000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x25a8de0_0, 0, 1;
+    %delay 1000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x25a8d20_0, 0, 1;
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "coincidence_detector_tb.v";
+    "coincidence_detector.v";

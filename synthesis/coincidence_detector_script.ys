@@ -1,0 +1,9 @@
+read_verilog coincidence_detector.v
+proc; stat
+opt; stat
+techmap; stat
+opt; stat
+dfflibmap -liberty ../osu018_stdcells.lib; stat
+abc -liberty ../osu018_stdcells.lib; stat
+clean; stat
+write_verilog coincidence_detector_synth.v

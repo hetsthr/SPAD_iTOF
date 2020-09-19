@@ -1,0 +1,43 @@
+$date
+	Fri Sep 18 23:51:22 2020
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module tb_memory $end
+$var wire 12 ! count_out [11:0] $end
+$var reg 12 " count_in [11:0] $end
+$var reg 1 # read $end
+$scope module m1 $end
+$var wire 12 $ count_in [11:0] $end
+$var wire 1 # read $end
+$var reg 12 % count_out [11:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx %
+b10010110 $
+0#
+b10010110 "
+bx !
+$end
+#1000
+b10010110 !
+b10010110 %
+1#
+#4000
+0#
+#9000
+b1001011000 "
+b1001011000 $
+#16000
+b1001011000 !
+b1001011000 %
+1#
+#24000
+0#
